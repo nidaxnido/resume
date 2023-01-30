@@ -2,15 +2,16 @@
 import Image from 'next/image'
 import { Content, Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import { Skill, Exp, Profile } from '@/nType'
+import { Skill, Exp, Profile, Porto } from '@/nType'
 import Layout from '@/components/Layout'
 import Sidebar from '@/components/Sidebar'
 import Header from '@/components/Header'
 import MainContent from '@/components/MainContent'
 import DetailCard from '@/components/DetailCard'
-import {FaSuitcase, FaCertificate} from 'react-icons/fa'
+import {FaSuitcase, FaCertificate, FaHive} from 'react-icons/fa'
 import exp from 'constants'
 import {Text, UnorderedList, ListItem} from '@chakra-ui/react'
+import PortoCard from '@/components/PortoCard'
 // import {ReactHtmlParser} from 'react-html-parser'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -85,6 +86,20 @@ export default function Home() {
             content: 'Bachelor Degree of Computer Science'
         }
     ];
+    const porto:Porto[] = [
+      {
+        title : 'tic-tac-toe',
+        description : 'An app to have fun by playing tic-tac-toe game. other than just being able to play the game, this web app also provide feature to go back to the steps before, just in case one might change his mind.'
+      },
+      {
+        title : 'to do app',
+        description : 'A simple one-page-website to increase productiity by tracking things to do. there are feature to add new task and delete task. '
+      },
+      {
+        title:'image-gallery',
+        description:'An amazing website to search any desired images. It collects beautiful images from Pixabay. '
+      }
+    ]
     
   return (
     <>
@@ -94,6 +109,7 @@ export default function Home() {
         <MainContent>
           <DetailCard title='Work Experience' icon={<FaSuitcase color='#009688' fontSize='30px' />} data={work} />
           <DetailCard title='Education' icon={<FaCertificate color='#009688' fontSize='30px' />} data={edu} />
+          <PortoCard title='Portofolio' icon={<FaHive color='#009688' fontSize='30px' />} data={porto} />
         </MainContent>
       </Layout>
     </>

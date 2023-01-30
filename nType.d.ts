@@ -15,5 +15,9 @@ export type Profile = {
     email:string,
     phone:string
 }
+export interface Porto{
+  title : string,
+  description:string
+}
 export const bayang = '0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%)';
   
